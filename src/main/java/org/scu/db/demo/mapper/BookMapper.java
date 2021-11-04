@@ -17,4 +17,13 @@ public interface BookMapper {
     int countCall123Book();
 
     List<String> findCountNotExceed2Callnumber();
+
+    void insertBook(Book book);
+
+    Book findBookById(Integer bookId);
+
+    Boolean updateBook(Book book);
+
+    void deleteBookById(Integer bookId);
+
 }

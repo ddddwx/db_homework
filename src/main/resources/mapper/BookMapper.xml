@@ -33,6 +33,25 @@
     </select>
 <!--作业完-->
 
+<!--    插入-->
+    <insert id="insertBook" parameterType="org.scu.db.demo.model.Book">
+        insert into book(book_id,edition,borrowduedate,borrowermemno,callnumber) values (#{bookId},#{edition}, #{borrowduedate},#{borrowermemno},#{callnumber})
+    </insert>
+
+    <select id="findBookById" resultMap="book_resultmap">
+        select * from book where book_id = #{bookId}
+    </select>
+
+<!--    更新-->
+    <update id="updateBook" parameterType="org.scu.db.demo.model.Book">
+        update book set edition=#{edition},borrowduedate=#{borrowduedate},borrowermemno=#{borrowermemno},callnumber=#{callnumber} where book_id=#{bookId}
+    </update>
+
+<!--    删除-->
+    <delete id="deleteBookById" parameterType="int">
+        delete from book where book_id = #{bookId}
+    </delete>
+
 </mapper>
 
 

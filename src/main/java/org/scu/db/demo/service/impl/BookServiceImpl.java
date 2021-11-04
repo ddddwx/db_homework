@@ -35,4 +35,23 @@ public class BookServiceImpl implements BookService {
         return bookMapper.findCountNotExceed2Callnumber();
     }
 
+    public void insertBook(Book book){
+        bookMapper.insertBook(book);
+    }
+
+    public Book findBookById(Integer bookId){
+        return bookMapper.findBookById(bookId);
+    }
+
+    public Boolean updateBook(Book book){
+        return bookMapper.updateBook(book);
+    }
+
+    public void deleteBookById(Integer bookId){
+        bookMapper.deleteBookById(bookId);
+    }
+
+
+
+
 }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增、编辑</title>
+</head>
+<body>
+    <a th:href="@{/index}">回到主页</a>
+    <form th:action="@{/insert}" method="post">
+        <div th:object="${book}">
+            <div>
+                <label>图书编号</label>
+                <input type="text" name="id" th:field="*{bookId}" />
+            </div>
+            <div>
+                <label>图书版本</label>
+                <input type="text" name="edition" th:field="*{edition}" />
+            </div>
+            <div>
+                <label>借阅者号</label>
+                <input type="text" name="borrowermemno" th:field="*{borrowermemno}" />
+            </div>
+            <div>
+                <label>归还日期</label>
+                <input type="text" name="borrowduedate" th:field="*{borrowduedate}" />
+            </div>
+            <div>
+                <label>索引编号</label>
+                <input type="text" name="callnumber" th:field="*{callnumber}" />
+            </div>
+            <div>
+                <input type="submit" value="提交" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
