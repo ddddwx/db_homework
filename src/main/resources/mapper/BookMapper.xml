@@ -19,6 +19,19 @@
     <select id="query_call_and_count" resultType="map">
         select callnumber, count(*) as call_num from book group by callnumber;
     </select>
+<!--作业-->
+    <select id="countCall123Book" resultType="int">
+        select COUNT(*) from book where callnumber='Call123';
+    </select>
+
+    <select id="findAllBorrowedBooksId" resultType="int">
+        select book_id from book where borrowermemno is not null;
+    </select>
+
+    <select id="findCountNotExceed2Callnumber" resultType="string">
+        select callnumber from book group by callnumber having COUNT(*) &lt; 3;
+    </select>
+<!--作业完-->
 
 </mapper>
 

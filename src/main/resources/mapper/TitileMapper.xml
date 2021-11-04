@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.scu.db.demo.mapper.TitleMapper">
+    <resultMap id="title_result" type="org.scu.db.demo.model.Title">
+        <id property="callnumber" column="callnumber"/>
+        <result property="name" column="name"/>
+        <result property="isbn" column="isbn"/>
+        <result property="year" column="year"/>
+        <result property="publisher" column="publisher"/>
+    </resultMap>
+
+    <select id="findIliadOrOdysseyTitle" resultMap="title_result">
+        select * from title where name in ('Iliad', 'Odyssey');
+    </select>
+</mapper>

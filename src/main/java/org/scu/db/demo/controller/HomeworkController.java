@@ -2,10 +2,12 @@ package org.scu.db.demo.controller;
 
 import org.scu.db.demo.model.Title;
 import org.scu.db.demo.service.BookService;
+import org.scu.db.demo.service.TitleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -13,8 +15,11 @@ import java.util.List;
 public class HomeworkController {
 
 
-    @Autowired
+    @Resource
     private BookService bookService;
+
+    @Resource
+    private TitleService titleService;
 
 
     @RequestMapping("/1")
@@ -26,7 +31,7 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        bookId = bookService.findAllBorrowedBooksId();
 
         //-----------在此之上写下执行代码---------------
         return bookId;//TODO:修改返回值为bookId
@@ -41,7 +46,7 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        titles = titleService.findIliadOrOdysseyTitle();
 
         //-----------在此之上写下执行代码---------------
         return titles;//TODO:修改返回值为titles
@@ -57,7 +62,7 @@ public class HomeworkController {
 
         //------------在此之下写下执行代码--------------
 
-
+        count = bookService.countCall123Book();
 
         //-----------在此之上写下执行代码---------------
         return count;//TODO:修改返回值为books
@@ -71,7 +76,7 @@ public class HomeworkController {
         List<String> callnumbers;
         //------------在此之下写下执行代码--------------
 
-
+        callnumbers = bookService.findCountNotExceed2Callnumber();
         //-----------在此之上写下执行代码---------------
         return callnumbers;//TODO:修改返回值为books
     }

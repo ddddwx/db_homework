@@ -7,8 +7,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Service
+
 public interface BookService {
     List<Book> findAllBooks();
     List<Map> query_call_and_count();
+
+    List<Integer> findAllBorrowedBooksId();
+
+    int countCall123Book();
+
+    List<String> findCountNotExceed2Callnumber();
 }
