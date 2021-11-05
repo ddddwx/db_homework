@@ -22,8 +22,8 @@ public class ThymeleafController {
     BookService bookService;
 
     @RequestMapping(path = "/index" , method = RequestMethod.GET)
-    public String getHtml(Model model){
-        model.addAttribute("books" ,bookService.findAllBooks());
+    public String getHtml(ModelMap modelMap){
+        modelMap.addAttribute("books" ,bookService.findAllBooks());
         return "index";
     }
 
